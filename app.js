@@ -35,7 +35,7 @@ app.use(methodOverride("_method"));
 app.use(flash());
 
 //Passport configuration
-
+app.locals.moment = require("moment");
 app.use(require("express-session")({
     secret: "This is the best app ever",
     resave: false,
