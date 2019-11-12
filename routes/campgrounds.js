@@ -11,7 +11,8 @@ router.get('/', function (req, res) {
             req.flash("error", "Error finding campgrounds!");
         } else {
             res.render('campgrounds/index', {
-                campgrounds: campgrounds
+                campgrounds: campgrounds,
+                page: 'campgrounds'
             });
         }
     });
