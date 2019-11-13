@@ -19,9 +19,12 @@
         <div class="caption">
           <h4> <%= campground.name %></h4>
         </div>
+        <div class="like-display-container">
+          <p><i class="glyphicon glyphicon-thumbs-up like-icon"></i> <%= campground.likes.length %></p>
+        </div>
         <p>
           <a href="/campgrounds/<%= campground._id %>" class="btn btn-primary">More Info</a>
-          </p>
+        </p>
       </div>
     </div>
     <% }) %>

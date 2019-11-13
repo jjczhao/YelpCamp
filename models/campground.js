@@ -6,23 +6,24 @@ var campgoundSchema = new mongoose.Schema({
     description: String,
     price: String,
     createAt: {
-        type:Date,
+        type: Date,
         default: Date.now
     },
+    likes: [{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "User"
+    }],
     author: {
         id: {
             type: mongoose.Schema.Types.ObjectId,
-            ref:"User"
+            ref: "User"
         },
         username: String
     },
-    comments:[
-        {
-            type: mongoose.Schema.Types.ObjectId,
-            ref:"Comment"
-        }
-    ]
+    comments: [{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Comment"
+    }]
 });
 
 module.exports = mongoose.model("Campground", campgoundSchema);
-

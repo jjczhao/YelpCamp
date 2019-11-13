@@ -41,7 +41,8 @@ router.post('/', middleware.isLoggedIn, function (req, res) {
         image: image,
         description: description,
         price: price,
-        author: author
+        author: author,
+        likes:[]
     }, function (err, newlyCreated) {
         if (err) {
             req.flash("error", "Error in create new campground page!");
@@ -59,7 +60,7 @@ router.get('/new', middleware.isLoggedIn, function (req, res) {
 
 router.get('/:id', function (req, res) {
     // find the campground with provided id
-    Campground.findById(req.params.id).populate("comments").exec(function (err, foundCampground) {
+    Campground.findById(req.params.id).populate("comments likes").exec(function (err, foundCampground) {
         if (err || !foundCampground) {
             req.flash("error", "Campground not found!");
             res.redirect("back");
@@ -114,6 +115,36 @@ router.delete('/:id', middleware.checkCampgroundOwnership, function (req, res) {
             });
         }
     });
+});
+
+
+// like and unlike route
+router.post("/:id/like", middleware.isLoggedIn, function(req, res){
+    Campground.findById(req.params.id, function(err, foundCampground){
+        if(err || !foundCampground){
+            req.flash("error", "Something went wrong!");
+            return res.redirect("back");
+        }
+        
+        var foundUserLike = foundCampground.likes.some(function(like){
+            return like.equals(req.user._id);
+        });
+
+        if(foundUserLike){
+            foundCampground.likes.pull(req.user._id);
+        }else{
+            foundCampground.likes.push(req.user);
+        }
+
+        foundCampground.save(function(err){
+            if(err){
+                req.flash("error", "Something went wrong!");
+                return res.redirect("/campgrounds");
+            }
+
+            return res.redirect("/campgrounds/"+ foundCampground._id);
+        });
+    });  
 });
 
 
