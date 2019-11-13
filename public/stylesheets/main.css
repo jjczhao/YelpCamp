@@ -28,6 +28,11 @@
     transition-duration: 0.8s;
 }
 
+.active{
+    border-bottom: 2px solid black;   
+}
+
+
 header{
     background-image: url(../img/cover.jpg.jpg);
     background-position: center;
@@ -56,4 +61,19 @@ header div{
     background-color: lightsteelblue;
     border-radius: 5px;
     padding: 5px;
+}
+
+
+
+
+.more-button{
+    border: 2px solid rgba(255,255,255,0.1);
+}
+
+.more-button:hover{
+    background: white;
+    color: black;
+    border-radius: 50px;
+    transition: all .5s ease 0s;
+    border: 2px solid lightskyblue;
 }

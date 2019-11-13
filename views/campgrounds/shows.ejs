@@ -28,11 +28,11 @@
                                     return like.equals(currentUser._id)
                                 })) { %>
                                     <button class="btn btn-sm btn-primary">
-                                        <i class="fas fa-thumbs-up"></i> Liked (<%= campground.likes.length %>)
+                                        <i class="glyphicon glyphicon-thumbs-up like-icon"></i> Liked (<%= campground.likes.length %>)
                                     </button>
                                 <% } else { %>
                                     <button class="btn btn-sm btn-secondary">
-                                        <i class="fas fa-thumbs-up"></i> Like (<%= campground.likes.length %>)
+                                        <i class="glyphicon glyphicon-thumbs-up like-icon"></i> Like (<%= campground.likes.length %>)
                                     </button>
                                 <% } %>
                                 <button type="button" class="btn btn-sm btn-default" data-toggle="modal"
