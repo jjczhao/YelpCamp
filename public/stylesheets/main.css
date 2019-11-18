@@ -68,7 +68,7 @@ header div{
 
 
 
-.more-button{
+/* .more-button{
     border: 2px solid rgba(255,255,255,0.1);
 }
 
@@ -78,7 +78,7 @@ header div{
     border-radius: 50px;
     transition: all .5s ease 0s;
     border: 2px solid lightskyblue;
-}
+} */
 
 .sort-container{
     background-color: #f8f8f8;
