@@ -20,11 +20,11 @@
       <option value="4">Least Liked</option>
     </select>
   </div> -->
-  
+
   <div class="row text-center" style="display: flex; flex-wrap: wrap;">
     <% campgrounds.forEach(function(campground){ %>
     <div class="col-md-3 col-sm-6">
-      <div class="thumbnail">
+      <div class="thumbnail card-container">
         <img class="thumbnail-img" src="<%= campground.image %>">
         <div class="caption">
           <h4> <%= campground.name %></h4>
