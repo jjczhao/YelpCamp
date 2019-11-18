@@ -10,19 +10,22 @@
       <a class="btn btn-primary btn-lg" href="/campgrounds/new">Add New campground</a>
   </header>
 
-  <div>
+<!-- TODO: make sorting functional -->
+  <!-- <div class="sort-container">
+    <label for="sort-by">Sort By: </label>
     <select name="sort" id="sort-by">
       <option value="1">Asc. Order</option>
       <option value="2">Des. Order</option>
       <option value="3">Most liked</option>
       <option value="4">Least Liked</option>
     </select>
-  </div>
+  </div> -->
+  
   <div class="row text-center" style="display: flex; flex-wrap: wrap;">
     <% campgrounds.forEach(function(campground){ %>
     <div class="col-md-3 col-sm-6">
       <div class="thumbnail">
-        <img src="<%= campground.image %>">
+        <img class="thumbnail-img" src="<%= campground.image %>">
         <div class="caption">
           <h4> <%= campground.name %></h4>
         </div>

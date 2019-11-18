@@ -4,6 +4,7 @@
 
 .thumbnail{
     padding: 0;
+    box-shadow:5px 5px 2px 2px lightblue;
 }
 
 .thumbnail .caption-full{
@@ -37,6 +38,7 @@ header{
     background-image: url(../img/cover.jpg.jpg);
     background-position: center;
     background-size: cover;
+    box-shadow:5px 5px 2px 2px lightblue;
 }
 
 header div{
@@ -76,4 +78,21 @@ header div{
     border-radius: 50px;
     transition: all .5s ease 0s;
     border: 2px solid lightskyblue;
+}
+
+.sort-container{
+    background-color: #f8f8f8;
+    padding: 15px;
+    margin-bottom: 30px;
+    border-radius: 15px;
+    box-shadow:5px 5px 2px 2px lightblue;
+}
+
+.thumbnail-img{
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+}
+
+#sort-by{
+    padding: 15px;
 }
