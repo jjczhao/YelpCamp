@@ -17,7 +17,7 @@ var commentRoutes = require("./routes/comments"),
 
 
 
-mongoose.connect("mongodb://localhost:27017/yelp_camp", {
+mongoose.connect(process.env.DATABASE, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useFindAndModify: false
@@ -58,6 +58,6 @@ app.use("/", indexRoutes);
 app.use("/campgrounds", campgroundRoute);
 app.use("/campgrounds/:id/comments", commentRoutes);
 
-app.listen(8000, function () {
-    console.log('server is listening on port 8000');
+app.listen(process.env.PORT, process.env.IP, function () {
+    console.log('server is listening on port' + (process.env.PORT || 8000));
 });
