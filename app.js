@@ -15,7 +15,7 @@ var commentRoutes = require("./routes/comments"),
     campgroundRoute = require("./routes/campgrounds"),
     indexRoutes = require("./routes/index");
 
-
+require("dotenv").config();
 
 mongoose.connect(process.env.DATABASE, {
     useNewUrlParser: true,
@@ -58,6 +58,6 @@ app.use("/", indexRoutes);
 app.use("/campgrounds", campgroundRoute);
 app.use("/campgrounds/:id/comments", commentRoutes);
 
-app.listen(process.env.PORT, process.env.IP, function () {
+app.listen(process.env.PORT || 8000, process.env.IP, function () {
     console.log('server is listening on port' + (process.env.PORT || 8000));
 });
